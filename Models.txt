@@ -1,0 +1,7 @@
+Model comparisons for sentiment analysis:
+  - BERT -> a classic, performs well for sentiment analysis, but is a large model with a lot of parameters. Pre-trained, replace task head with a task specific module, latent vector representation of pre-trained BERT model then fed into new module.
+  - RoBERTa -> an improvement on BERT with changes to hyperparameters and training improvements. Slightly larger but comes pre-trained. Baseline RoBERTa according to PCL site has 0.3935 precision, 0.653 recall and	0.4911 F1.
+  - BERT-PCL -> current best performing model on the task. BERT with some fine tuning added: https://arxiv.org/pdf/2203.04616, namely, they introduce different learning rate groups for higher and lower layers and weighted random sampling to alleviate the class imbalance problem.
+  - BEIKE NLP -> finetuned version of DeBERTa performing 4th on the task currently. DeBERTa introduces disentangled attention wherein the position and token encodings are not combined into a vector as in BERT but kept separate in a tuple. Performs best on the second task.
+
+BERT-PCL is initialised with roberta-large parameters and uses k-fold cross validation with k=5. 
