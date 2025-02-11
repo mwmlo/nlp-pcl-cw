@@ -12,8 +12,8 @@ train_par_ids = pd.read_csv("train_semeval_parids-labels.csv")["par_id"]
 
 # Split into dev and train sets
 df_par_ids = df["par_id"].astype("Int64")
-df_dev = df[df_par_ids.isin(dev_par_ids)]
-df_train = df[df_par_ids.isin(train_par_ids)]
+df_dev = df[df_par_ids.isin(dev_par_ids)].dropna()
+df_train = df[df_par_ids.isin(train_par_ids)].dropna()
 
 # Display results
 print("Dev Set:", df_dev.shape)
