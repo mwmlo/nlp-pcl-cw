@@ -1,2 +1,5 @@
 __pycache__
 .venv
+output/
+.ipynb_checkpoints/
+models/
