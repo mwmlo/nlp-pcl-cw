@@ -11,4 +11,4 @@ uptime
 
 cd /vol/bitbucket/mwl21/nlp-pcl-cw
 
-jupyter nbconvert --execute --to notebook nlp-cw.ipynb
+python execute_slurm.py
